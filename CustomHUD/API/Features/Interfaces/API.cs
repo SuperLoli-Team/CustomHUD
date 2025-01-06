@@ -11,5 +11,6 @@ namespace CustomHUD.API.Features.Interfaces
         public static List<Display> DisplayList = new();
         public static Dictionary<Player, List<SLTElement>> CachedPlayerElements { get; set; } = new();
         public static List<SLTElement> CachedElements { get; set; } = new();
+
     }
 }

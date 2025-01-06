@@ -26,6 +26,7 @@ namespace CustomHUD.Elements
         public override string Description { get; } = "Shows a Info of player";
         public override HintBuilding.AlignStyle Align { get; set; } = Plugin.StaticConfig.PlayerInfo.Align;
         public float BasePosition = Plugin.StaticConfig.PlayerInfo.position;
+        public const float PosNull = 15;
 
         public override string GetContent(DisplayCore core)
         {
@@ -39,7 +40,7 @@ namespace CustomHUD.Elements
 
             sb.Append($"Your name: {pl.DisplayNickname}")
                 .AddLinebreak()
-                .Append($"Your Role: <color={pl.Role.Color.ToHex()}> {Plugin.StaticConfig.PlayerInfo.roleNames} </color>")
+                .Append($"Your Role: <color={pl.Role.Color.ToHex()}> {Plugin.StaticConfig.PlayerInfo.roleNames[pl.Role.Type]} </color>")
                 .AppendLine();
             return sb.ToString();
         }
